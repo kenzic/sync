@@ -14,8 +14,11 @@ Sometimes the content type sent in the header is not the type that it is. For ex
 
 Install
 -------------
+
 .. code-block:: shell
   pip install drf-url-content-type-override
+
+Add 'DEFAULT_CONTENT_NEGOTIATION_CLASS'
 
 .. code-block:: python
   REST_FRAMEWORK = {
