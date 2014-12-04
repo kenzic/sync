@@ -16,11 +16,13 @@ Install
 -------------
 
 .. code-block:: shell
+
   pip install drf-url-content-type-override
 
 Add 'DEFAULT_CONTENT_NEGOTIATION_CLASS'
 
 .. code-block:: python
+
   REST_FRAMEWORK = {
     'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'drf_url_content_type_override.URLOverrideContentNegotiation',
   }
