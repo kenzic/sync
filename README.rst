@@ -15,8 +15,30 @@ Sometimes it makes sense to override the content type specified in the header. F
 Install
 -------------
 
+.. code-block:: shell
+
+  pip install drf-url-content-type-override
+
+Add 'DEFAULT_CONTENT_NEGOTIATION_CLASS'
+
 .. code-block:: python
 
   REST_FRAMEWORK = {
     'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'drf_url_content_type_override.URLOverrideContentNegotiation',
   }
+
+
+Usage
+-------------
+Example: Javascript on a different domain from the API.
+
+.. code-block:: javascript
+
+  jquery.ajax({
+    'url': 'http://apidomain.com/api/1/contact?_content_type=application/x-www-form-urlencoded',
+    'type': 'POST',
+    'data': {'name': 'Chris'}
+  })
+
+
+Reference: https://github.com/tomchristie/django-rest-framework/pull/1731
